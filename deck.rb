@@ -1,4 +1,5 @@
 require_relative 'card'
+require_relative 'deck'
 
 class Deck
   attr_reader :cards
@@ -26,6 +27,29 @@ class Deck
     @cards.unshift(card_to_return)
   end
 end
+
+###
+class Pile
+
+  attr_reader :cards
+  attr_writer :cards
+  
+  def initialize
+      @cards =[]
+      puts "test"
+
+  end
+
+  def top_card
+
+   @cards = draw()
+
+  end
+
+end
+
+
+
 
 # class Card
 #   def initialize(rank, suit)
