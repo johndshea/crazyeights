@@ -1,6 +1,11 @@
 class Player
+  attr_reader :cards
+  attr_writer :cards
   def initialize
     @cards = []
+  end
+  def draw(deck)
+    @cards << deck.draw
   end
 end
 

@@ -1,5 +1,6 @@
 class Deck
   attr_reader :cards
+  attr_writer :cards
   RANKS = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
   SUITS = ["Spades", "Hearts", "Clubs", "Diamonds"]
   def initialize
@@ -12,8 +13,8 @@ class Deck
     end
     @cards.shuffle!
   end
-  def draw
-    
+  def draw(howMany)
+    return @cards.pop(howMany)
   end
 end
 
