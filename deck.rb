@@ -1,3 +1,5 @@
+require_relative 'card'
+
 class Deck
   attr_reader :cards
   attr_writer :cards
@@ -13,20 +15,21 @@ class Deck
     end
     @cards.shuffle!
   end
-  def draw(howMany)
+  def draw(howMany = 1)
     return @cards.pop(howMany)
   end
-end
-
-class Card
-  def initialize(rank, suit)
-    @rank = rank
-    @suit = suit
-    @name = "#{@rank} of #{@suit}"
+  def shuffle
+    @cards.shuffle!
+  end
+  def return(card_to_return)
+    @cards.unshift(card_to_return)
   end
 end
 
-# @cards = RANKS.product(SUITS).shuffle
-# def draw(howMany)
-#   @cards[0][0], @cards[0][1]
+# class Card
+#   def initialize(rank, suit)
+#     @rank = rank
+#     @suit = suit
+#     @name = "#{@rank} of #{@suit}"
+#   end
 # end
