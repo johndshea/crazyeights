@@ -1,15 +1,18 @@
+require_relative 'deck'
+require 'pry'
+
 class Player
   attr_reader :cards
   attr_writer :cards
   def initialize
     @cards = []
   end
-  def draw(deck)
-    @cards << deck.draw
+  def draw(deck, howMany)
+    @cards << deck.draw(howMany)
   end
 end
 
-
+binding.pry
 
 class Menu
   def initialize
