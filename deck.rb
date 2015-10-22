@@ -21,6 +21,9 @@ class Deck
   def shuffle
     @cards.shuffle!
   end
+  def return(card_to_return)
+    @cards.unshift(card_to_return)
+  end
 end
 
 class Card
