@@ -18,12 +18,18 @@ binding.pry
 
 class Menu
   def initialize
+
+    option = nil
+
     puts "1. New game!"
     puts "2. Quit"
-    gets option
     print "Option: "
+    $stdout.flush
+    option = gets option
     if option == 1
       puts "starting new game..."
+      game = Player.new
+      game.initialize
       #do something... like maybe...
       #1. deal the cards to player and/or dealer
       #2. draw card from pile...
@@ -39,3 +45,7 @@ class Menu
     end
   end
 end
+
+a = Menu.new
+
+print a
