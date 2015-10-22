@@ -1,6 +1,8 @@
 require_relative 'deck'
 require_relative 'player'
 require 'pry'
+puts "🃅"
+puts "\u1F0C5"
 
 binding.pry
 
