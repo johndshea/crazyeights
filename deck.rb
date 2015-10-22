@@ -1,4 +1,4 @@
-require_relative card.rb
+require_relative 'card'
 
 class Deck
   attr_reader :cards
@@ -23,15 +23,10 @@ class Deck
   end
 end
 
-class Card
-  def initialize(rank, suit)
-    @rank = rank
-    @suit = suit
-    @name = "#{@rank} of #{@suit}"
-  end
-end
-
-# @cards = RANKS.product(SUITS).shuffle
-# def draw(howMany)
-#   @cards[0][0], @cards[0][1]
+# class Card
+#   def initialize(rank, suit)
+#     @rank = rank
+#     @suit = suit
+#     @name = "#{@rank} of #{@suit}"
+#   end
 # end

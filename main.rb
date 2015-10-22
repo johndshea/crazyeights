@@ -1,5 +1,5 @@
-require_relative deck.rb
-require pry
+require_relative 'deck'
+require 'pry'
 
 class Player
   attr_reader :cards
@@ -7,8 +7,8 @@ class Player
   def initialize
     @cards = []
   end
-  def draw(deck)
-    @cards << deck.draw
+  def draw(deck, howMany)
+    @cards << deck.draw(howMany)
   end
 end
 
