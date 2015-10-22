@@ -1,3 +1,5 @@
+require_relative card.rb
+
 class Deck
   attr_reader :cards
   attr_writer :cards
@@ -13,8 +15,11 @@ class Deck
     end
     @cards.shuffle!
   end
-  def draw(howMany)
+  def draw(howMany = 1)
     return @cards.pop(howMany)
+  end
+  def shuffle
+    @cards.shuffle!
   end
 end
 

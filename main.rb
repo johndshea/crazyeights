@@ -1,3 +1,6 @@
+require_relative deck.rb
+require pry
+
 class Player
   attr_reader :cards
   attr_writer :cards
@@ -8,6 +11,8 @@ class Player
     @cards << deck.draw
   end
 end
+
+binding.pry
 
 class Menu
   def initialize
