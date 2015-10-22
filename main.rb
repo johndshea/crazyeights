@@ -8,7 +8,9 @@ class Player
     @cards = []
   end
   def draw(deck, howMany)
-    @cards << deck.draw(howMany)
+    deck.draw(howMany).each do |card|
+      @cards << card
+    end
   end
 end
 
