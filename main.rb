@@ -1,4 +1,5 @@
 require_relative 'deck'
+require_relative 'player'
 require 'pry'
 
 class Player
@@ -16,7 +17,7 @@ class Player
   end
 end
 
-#binding.pry
+binding.pry
 
 class Menu < Player
   def initialize
