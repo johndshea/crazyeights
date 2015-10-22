@@ -1,39 +1,60 @@
 require_relative 'deck'
 require_relative 'player'
 require 'pry'
+puts "🃅"
+puts "\u1F0C5"
+
+class Player
+  attr_reader :cards
+  attr_writer :cards
+
+  def initialize
+    @cards = []
+  end
+
+  def draw(deck, howMany)
+    deck.draw(howMany).each do |card|
+      @cards << card
+    end
+  end
+end
 
 binding.pry
 
-class Menu
+class Menu < Player
   def initialize
-
-    option = nil
-
     puts "1. New game!"
     puts "2. Quit"
     print "Option: "
     $stdout.flush
-    option = gets option
-    if option == 1
-      puts "starting new game..."
-      game = Player.new
-      game.initialize
-      #do something... like maybe...
-      #1. deal the cards to player and/or dealer
-      #2. draw card from pile...
-      #3. select card from deck... etc
 
-    elsif option == 2
-      puts "quitting..."
-      #quit the game
+    case gets().strip()
+      when "1"
+        puts "Starting new game!"
 
-    else
-      print "invalid option"
+        #create new deck and shuffle
+        deck = Deck.new
+        deck.shuffle
+        puts deck.inspect
+
+        #deal 8 cards to each players
+        player1 = Player.new
+        player2 = Player.new
+        player1.draw(deck, 8)
+        player2.draw(deck, 8)
+        puts player1.inspect, player2.inspect
+
+
+        #somethine else.
+
+      when "2"
+        puts "Rage quitted."
+        exit
+      else
+        puts "Invalid input, please enter correct input"
 
     end
   end
 end
 
-a = Menu.new
-
-print a
+start = Menu.new
