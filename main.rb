@@ -29,13 +29,18 @@ class Menu < Player
     case gets().strip()
       when "1"
         puts "Starting new game!"
-        game = Player.new
-        deck = Deck.new
 
-        #create deck
-        game.draw(deck, 8)
+        #create new deck and shuffle
+        deck = Deck.new
+        deck.shuffle
+        puts deck.inspect
 
         #deal 8 cards to each players
+        player1 = Player.new
+        player2 = Player.new
+        player1.draw(deck, 8)
+        player2.draw(deck, 8)
+        puts player1.inspect, player2.inspect
 
 
         #somethine else.
